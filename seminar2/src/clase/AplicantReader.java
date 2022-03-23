@@ -1,8 +1,19 @@
 package clase;
 
+import java.io.File;
+import java.io.FileNotFoundException;
 import java.util.Scanner;
 
 public abstract class AplicantReader implements Reader{
+    protected Scanner scanner;
+
+    public Scanner getScanner() {
+        return scanner;
+    }
+
+    AplicantReader(String numeFisier) throws FileNotFoundException {
+        scanner=new Scanner(new File(numeFisier));
+    }
     public void readAplicant(Scanner scanner, Aplicant aplicant){
         String nume = scanner.next();
         String prenume = scanner.next();

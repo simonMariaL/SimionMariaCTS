@@ -7,22 +7,25 @@ import java.util.List;
 import java.util.Scanner;
 
 public class StudentiReader extends AplicantReader{
+    protected StudentiReader(String numeFisier) throws FileNotFoundException {
+        super(numeFisier);
+    }
+
     @Override
     public List<Aplicant> readAplicanti(String file) throws FileNotFoundException {
-        Scanner input = new Scanner(new File(file));
-        input.useDelimiter(",|\n");
-        List<Aplicant> studenti = new ArrayList<Aplicant>();
 
-        while (input.hasNext()) {
+        scanner.useDelimiter(",|\n");
+        List<Aplicant> studenti = new ArrayList<Aplicant>();
+        while (scanner.hasNext()) {
            Student student= new Student();
-           readAplicant(input, student);
-            int an_studii = input.nextInt();
-            String facultate = (input.next()).toString();
-            student.setAn_studii(an_studii);
+           readAplicant(scanner, student);
+            int anStudii = scanner.nextInt();
+            String facultate = (scanner.next()).toString();
+            student.setAnStudii(anStudii);
             student.setFacultate(facultate);
             studenti.add(student);
         }
-        input.close();
+        scanner.close();
         return studenti;
     }
 }
