@@ -2,7 +2,6 @@ package clase;
 
 import java.util.HashMap;
 import java.util.Map;
-
 public class LinieFactory {
     private Map<Integer, Linie> linii;
 
