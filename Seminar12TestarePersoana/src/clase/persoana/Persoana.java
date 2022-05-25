@@ -1,4 +1,4 @@
-package clase;
+package clase.persoana;
 import exceptii.ExceptieCnpGresit;
 
 import java.util.Calendar;

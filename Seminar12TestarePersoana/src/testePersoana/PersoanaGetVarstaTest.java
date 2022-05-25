@@ -1,6 +1,6 @@
 package testePersoana;
 
-import clase.Persoana;
+import clase.persoana.Persoana;
 import exceptii.ExceptieCnpGresit;
 import org.junit.Test;
 
